@@ -25,7 +25,25 @@ module.exports = function(grunt) {
           'bower_components/angular-animate/angular-animate.js',
           'bower_components/angular-route/angular-route.js'
         ],
-        dest: 'public/angular.min.js'
+        dest: 'public/vendor/js/angular.min.js'
+      },
+      jquery: {
+        src: [
+          'bower_components/dist/jquery.min.js'
+        ],
+        dest: 'public/vendor/js/jquery.min.js'
+      },
+      bootstrap_js: {
+        src: [
+          'bower_components/dist/js/bootstrap.min.js'
+        ],
+        dest: 'public/vendor/js/bootstrap.min.js'
+      },
+      bootstrap_css: {
+        src: [
+          'bower_components/dist/css/bootstrap.min.css'
+        ],
+        dest: 'public/vendor/css/bootstrap.min.css'
       }
     },
     uglify: {
@@ -37,8 +55,8 @@ module.exports = function(grunt) {
         dest: 'public/app.min.js'
       },
       angular: {
-        src: 'public/angular.min.js',
-        dest: 'public/angular.min.js'
+        src: 'public/vendor/js/angular.min.js',
+        dest: 'public/vendor/js/angular.min.js'
       },
       actions: {
         src: 'public/js/main.min.js',
