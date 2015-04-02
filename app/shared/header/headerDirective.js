@@ -1,3 +1,6 @@
-/**
- * Created by brycen on 15-03-05.
- */
+app.directive('headerDirective', function () {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/header.view.html'
+  };
+});
