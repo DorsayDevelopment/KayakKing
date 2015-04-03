@@ -1,9 +1,9 @@
 // Main javascript file for dom actions
 
 $(window).scroll(function() {
-  if ($(document).scrollTop() > 50) {
-    $('nav').addClass('shrink');
+  if ($(document).scrollTop() > 20) {
+    $('nav').addClass('navbar-shrink');
   } else {
-    $('nav').removeClass('shrink');
+    $('nav').removeClass('navbar-shrink');
   }
 });

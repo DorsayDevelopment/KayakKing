@@ -80,12 +80,11 @@ module.exports = function(grunt) {
           }, {
             expand: true,
             flatten: true,
-            src: 'bower_components/jquery/dist/jquery.min.js',
-            dest: 'public/vendor/js/'
-          }, {
-            expand: true,
-            flatten: true,
-            src: 'bower_components/bootstrap/dist/js/bootstrap.min.js',
+            src: [
+              'bower_components/jquery/dist/jquery.min.js',
+              'bower_components/jquery/dist/jquery.min.map',
+              'bower_components/bootstrap/dist/js/bootstrap.min.js'
+            ],
             dest: 'public/vendor/js/'
           }, {
             expand: true,
