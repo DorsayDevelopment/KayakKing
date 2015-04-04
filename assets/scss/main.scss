@@ -13,7 +13,8 @@ body {
 
 nav a {
   font-size: $menu-font-size-full;
-  @include transition(font-size, 0.2s);
+  $transitions: 'font-size', 'height';
+  @include transition($transitions, 0.2s);
 }
 
 nav.navbar {
