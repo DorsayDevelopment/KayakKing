@@ -6,15 +6,23 @@ $title-font-size-full: 25pt;
 $title-font-size-shrink: 20pt;
 $menu-font-size-full: 18pt;
 $menu-font-size-shrink: 15pt;
+$header-font-color: black;
 
 body {
-  padding-top: $header-size-full;
+  //padding-top: $header-size-full;
 }
 
 nav a {
   font-size: $menu-font-size-full;
+  color: $header-font-color !important;
   $transitions: 'font-size', 'height';
   @include transition($transitions, 0.2s);
+}
+
+li.active {
+  a {
+    color: white !important;
+  }
 }
 
 nav.navbar {
@@ -59,15 +67,22 @@ nav.navbar-shrink li a {
   line-height: $header-size-shrink;
   padding-top: 15px;
   padding-bottom: 15px;
+  color: white !important;
 }
 
 nav.navbar-shrink .navbar-brand {
   font-size: $title-font-size-shrink;
   padding-top: 15px;
   padding-bottom: 15px;
+  color: white !important;
+
 }
 
 nav.navbar-shrink .navbar-toggle {
-  //padding: 4px 5px;
-  //margin: 8px 15px 8px 0;
+  padding: 4px 5px;
+  margin: 8px 15px 8px 0;
+}
+
+#background-video {
+  width: 100%;
 }
