@@ -160,6 +160,7 @@ module.exports = function(grunt) {
 
   // Register tasks
   grunt.registerTask('default', ['concat', 'uglify', 'sass', 'copy']);
+  grunt.registerTask('dev', ['concat', 'sass', 'copy']);
   grunt.registerTask('install', 'auto_install');
 
 };
