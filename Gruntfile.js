@@ -91,6 +91,11 @@ module.exports = function(grunt) {
             flatten: true,
             src: 'bower_components/bootstrap/dist/css/bootstrap.min.css',
             dest: 'public/vendor/css/'
+          }, {
+            expand: true,
+            flatten: true,
+            src: 'assets/videos/*',
+            dest: 'public/videos/'
           }
 
         ]
