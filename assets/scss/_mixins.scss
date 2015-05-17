@@ -1,3 +1,7 @@
+$small-width: 50em;
+$large-width: 100em;
+
+
 @mixin transition($props, $duration) {
   $transition-string: '';
   @each $i in length($props) {
@@ -24,37 +28,19 @@
 }
 
 @mixin vpw-small {
-  @media only screen and (max-width: 60em) {
+  @media only screen and (max-width: $small-width) {
     @content;
   }
 }
 
 @mixin vpw-medium {
-  @media only screen and (min-width: 61em) {
+  @media only screen and (min-width: $small-width) {
     @content;
   }
 }
 
-@mixin vpw-max {
-  @media only screen and (min-width: 100em) {
-    @content;
-  }
-}
-
-@mixin vph-small {
-  @media only screen and (max-height: 27em) {
-    @content;
-  }
-}
-
-@mixin vph-medium {
-  @media only screen and (min-height: 27em) {
-    @content;
-  }
-}
-
-@mixin vph-large {
-  @media only screen and (min-height: 40em) {
+@mixin vpw-large {
+  @media only screen and (min-width: $large-width) {
     @content;
   }
 }
