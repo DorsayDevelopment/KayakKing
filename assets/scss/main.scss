@@ -52,8 +52,6 @@ nav .navbar-toggle {
   padding-bottom: 25px;
 }
 
-
-
 nav.navbar.navbar-shrink {
   height: $header-size-shrink;
   background: #232322;
@@ -84,5 +82,16 @@ nav.navbar-shrink .navbar-toggle {
 }
 
 #background-video {
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: black no-repeat;
+  background-size: cover;
 }
