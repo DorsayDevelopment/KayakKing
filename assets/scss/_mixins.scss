@@ -16,3 +16,45 @@
   -o-transition: #{$transition-string};
   transition: #{$transition-string};
 }
+
+@mixin vpw($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin vpw-small {
+  @media only screen and (max-width: 60em) {
+    @content;
+  }
+}
+
+@mixin vpw-medium {
+  @media only screen and (min-width: 61em) {
+    @content;
+  }
+}
+
+@mixin vpw-max {
+  @media only screen and (min-width: 100em) {
+    @content;
+  }
+}
+
+@mixin vph-small {
+  @media only screen and (max-height: 27em) {
+    @content;
+  }
+}
+
+@mixin vph-medium {
+  @media only screen and (min-height: 27em) {
+    @content;
+  }
+}
+
+@mixin vph-large {
+  @media only screen and (min-height: 40em) {
+    @content;
+  }
+}
