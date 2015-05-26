@@ -18,14 +18,6 @@ module.exports = function(grunt) {
       actions: {
         src: 'assets/js/*.js',
         dest: 'public/js/main.min.js'
-      },
-      angular: {
-        src: [
-          'bower_components/angular/angular.js',
-          'bower_components/angular-animate/angular-animate.js',
-          'bower_components/angular-route/angular-route.js'
-        ],
-        dest: 'public/vendor/js/angular.min.js'
       }
     },
     uglify: {
@@ -35,10 +27,6 @@ module.exports = function(grunt) {
       app: {
         src: 'public/app.min.js',
         dest: 'public/app.min.js'
-      },
-      angular: {
-        src: 'public/vendor/js/angular.min.js',
-        dest: 'public/vendor/js/angular.min.js'
       },
       actions: {
         src: 'public/js/main.min.js',
@@ -79,25 +67,10 @@ module.exports = function(grunt) {
             flatten: true
           }, {
             expand: true,
-            flatten: true,
-            src: [
-              'bower_components/jquery/dist/jquery.min.js',
-              'bower_components/jquery/dist/jquery.min.map',
-              'bower_components/bootstrap/dist/js/bootstrap.min.js'
-            ],
-            dest: 'public/vendor/js/'
-          }, {
-            expand: true,
-            flatten: true,
-            src: 'bower_components/bootstrap/dist/css/bootstrap.min.css',
-            dest: 'public/vendor/css/'
-          }, {
-            expand: true,
-            flatten: true,
-            src: 'assets/videos/*',
-            dest: 'public/videos/'
+            cwd: 'bower_components/',
+            src: '**',
+            dest: 'public/vendor/'
           }
-
         ]
       }
     },
