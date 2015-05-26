@@ -1,6 +1,6 @@
 nav a {
   font-size: 18pt;
-  color: black !important;
+  color: #e6e6e6 !important;
   -webkit-transition:  0.2s;
   -moz-transition:  0.2s;
   -ms-transition:  0.2s;
@@ -8,7 +8,7 @@ nav a {
   transition:  0.2s; }
 
 li.active a {
-  color: white !important; }
+  color: #e6e6e6 !important; }
 
 nav.navbar {
   height: 70px;
@@ -36,7 +36,7 @@ nav .navbar-toggle {
 
 nav.navbar.navbar-shrink {
   height: 20px;
-  background: #232322; }
+  background: #201f21; }
 
 nav.navbar-shrink a {
   font-size: 15pt; }
@@ -45,19 +45,43 @@ nav.navbar-shrink li a {
   line-height: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
-  color: white !important; }
+  color: #e6e6e6 !important; }
 
 nav.navbar-shrink .navbar-brand {
   font-size: 20pt;
   padding-top: 15px;
   padding-bottom: 15px;
-  color: white !important; }
+  color: #e6e6e6 !important; }
 
 nav.navbar-shrink .navbar-toggle {
   padding: 4px 5px;
   margin: 8px 15px 8px 0; }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5; }
+
+html {
+  position: relative;
+  min-height: 100%; }
+
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  margin-bottom: 60px; }
+
+.section, .main-section, .teaser-section {
+  height: 200px; }
+
+.main-section {
+  padding-top: 70px;
+  height: 500px;
+  background-color: #201f21; }
+
+.teaser-section {
+  background-color: red; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,9 +1,30 @@
 @import "mixins";
 @import "variables";
 @import "nav";
+@import "footer";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 body {
-  //padding-top: $header-size-full;
   overflow-x: hidden;
+  margin-bottom: 60px;
+}
+
+.section {
+  height: $section-height;
+}
+
+.main-section {
+  @extend .section;
+  padding-top: $header-size-full;
+  height: $main-section-height;
+  background-color: $main-section-background;
+}
+
+.teaser-section {
+  @extend .section;
+  background-color: red;
 }

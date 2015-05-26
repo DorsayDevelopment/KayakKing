@@ -10,7 +10,7 @@ nav a {
 
 li.active {
   a {
-    color: white !important;
+    color: $header-font-color !important;
   }
 }
 
@@ -43,7 +43,7 @@ nav .navbar-toggle {
 
 nav.navbar.navbar-shrink {
   height: $header-size-shrink;
-  background: #232322;
+  background: $header-color;
 }
 
 nav.navbar-shrink a {
@@ -54,14 +54,14 @@ nav.navbar-shrink li a {
   line-height: $header-size-shrink;
   padding-top: 15px;
   padding-bottom: 15px;
-  color: white !important;
+  color: $header-font-color !important;
 }
 
 nav.navbar-shrink .navbar-brand {
   font-size: $title-font-size-shrink;
   padding-top: 15px;
   padding-bottom: 15px;
-  color: white !important;
+  color: $header-font-color !important;
 }
 
 nav.navbar-shrink .navbar-toggle {
