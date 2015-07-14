@@ -86,6 +86,11 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       },
+      app: {
+        files: [
+          'Gruntfile.js'
+        ]
+      },
       sass: {
         options: {
           livereload: false
@@ -101,10 +106,8 @@ module.exports = function(grunt) {
           'app/shared/**/*.js'
         ],
         tasks: [
-          'concat:app',
-          'concat:actions',
-          'uglify:app',
-          'uglify:actions',
+          'concat',
+          'uglify',
           'jshint'
         ]
       },
@@ -137,8 +140,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Register tasks
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'copy']);
-  grunt.registerTask('dev', ['concat', 'sass', 'copy']);
+  grunt.registerTask('build', ['concat', 'uglify', 'sass', 'copy']);
+  grunt.registerTask('default', ['build', 'watch']);
   grunt.registerTask('install', 'auto_install');
 
 };

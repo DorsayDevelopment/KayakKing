@@ -3,6 +3,9 @@
 @import "nav";
 @import "footer";
 
+// Angular-Bootstrap fix
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
 html {
   position: relative;
   min-height: 100%;
@@ -19,7 +22,7 @@ body {
 
 .main-section {
   @extend .section;
-  padding-top: $header-size-full;
+  //padding-top: $header-size-full;
   height: $main-section-height;
   background-color: $main-section-background;
 }

@@ -12,7 +12,7 @@ li.active a {
 
 nav.navbar {
   height: 70px;
-  background: none;
+  background-color: rgba(32, 31, 33, 0.5);
   border: none;
   -webkit-transition:  0.2s;
   -moz-transition:  0.2s;
@@ -65,6 +65,9 @@ nav.navbar-shrink .navbar-toggle {
   height: 60px;
   background-color: #201f21; }
 
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer; }
+
 html {
   position: relative;
   min-height: 100%; }
@@ -77,7 +80,6 @@ body {
   height: 200px; }
 
 .main-section {
-  padding-top: 70px;
   height: 500px;
   background-color: #201f21; }
 

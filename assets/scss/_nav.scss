@@ -16,7 +16,7 @@ li.active {
 
 nav.navbar {
   height: $header-size-full;
-  background: none;
+  background-color: transparentize($header-color, 0.5);
   border: none;
 
   @include transition(background-color, 0.2s);
