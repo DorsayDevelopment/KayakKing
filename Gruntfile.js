@@ -5,6 +5,20 @@ module.exports = function(grunt) {
   grunt.initConfig({
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
+    concurrent: {
+      target: {
+        tasks: [
+          'watch',
+          'nodemon'
+        ],
+        options: {logConcurrentOutput: true}
+      }
+    },
+    nodemon: {
+      dev: {
+        script: 'server.js'
+      }
+    },
     concat: {
       app: {
         src: [
@@ -62,9 +76,10 @@ module.exports = function(grunt) {
             flatten: true
           }, {
             expand: true,
-            src: 'assets/img/*',
+            cwd: 'assets/img/',
+            src: '**',
             dest: 'public/img/',
-            flatten: true
+            flatten: false
           }, {
             expand: true,
             cwd: 'bower_components/',
@@ -88,7 +103,8 @@ module.exports = function(grunt) {
       },
       app: {
         files: [
-          'Gruntfile.js'
+          'Gruntfile.js',
+          'server.js'
         ]
       },
       sass: {
@@ -138,10 +154,19 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-concurrent');
 
   // Register tasks
-  grunt.registerTask('build', ['concat', 'uglify', 'sass', 'copy']);
-  grunt.registerTask('default', ['build', 'watch']);
+  grunt.registerTask('build', [
+    'concat',
+    'uglify',
+    'sass',
+    'copy'
+  ]);
+
+  grunt.registerTask('default', ['build', 'concurrent:target']);
+
   grunt.registerTask('install', 'auto_install');
 
 };

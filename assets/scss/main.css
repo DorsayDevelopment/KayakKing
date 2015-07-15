@@ -57,6 +57,10 @@ nav.navbar-shrink .navbar-toggle {
   padding: 4px 5px;
   margin: 8px 15px 8px 0; }
 
+.carousel img {
+  margin: auto;
+  height: 60vh !important; }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -80,7 +84,7 @@ body {
   height: 200px; }
 
 .main-section {
-  height: 500px;
+  height: 60vh;
   background-color: #201f21; }
 
 .teaser-section {

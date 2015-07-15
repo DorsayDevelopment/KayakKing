@@ -1,6 +1,7 @@
 @import "mixins";
 @import "variables";
 @import "nav";
+@import "carousel";
 @import "footer";
 
 // Angular-Bootstrap fix
@@ -22,7 +23,6 @@ body {
 
 .main-section {
   @extend .section;
-  //padding-top: $header-size-full;
   height: $main-section-height;
   background-color: $main-section-background;
 }

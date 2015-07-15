@@ -3,23 +3,24 @@
  */
 app.controller('HomeController', function($scope, $location) {
 
-
-
-
 });
 
 app.controller('CarouselCtrl', function ($scope) {
-  $scope.myInterval = 5000;
+  $scope.interval = 8000;
   var slides = $scope.slides = [];
   $scope.addSlide = function() {
-    var newWidth = 800 + slides.length + 1;
     slides.push({
-      image: 'http://placekitten.com/' + newWidth + '/800',
-      text: ['More','Extra','Lots of','Surplus'][slides.length % 4] + ' ' +
-      ['Cats', 'Kittys', 'Felines', 'Cutes'][slides.length % 4]
+      image: 'img/carousel/kayaksun1.jpg',
+      title: 'Kayaking',
+      caption: 'Go kayaking'
     });
+    slides.push({
+      image: 'img/carousel/kayaksun2.jpg',
+      title: 'Adventuring',
+      caption: 'Go adventuring'
+    })
   };
-  for (var i=0; i<4; i++) {
+  for (var i = 0; i < 2; i++) {
     $scope.addSlide();
   }
 });
