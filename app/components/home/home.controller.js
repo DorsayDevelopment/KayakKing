@@ -4,6 +4,9 @@
 app.controller('HomeController', function($scope, $location) {
 
   $(document).ready(function(){
-    $('.slider').slider({full_width: true});
+    $('.slider').slider({
+      full_width: true,
+      height: '60vh'
+    });
   });
 });
