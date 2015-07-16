@@ -6,6 +6,10 @@
 
 // Angular-Bootstrap fix
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+// Terrible fixes for a terrible idea of mixing materialize and bootstrap
+.row {
+  margin: 0;
+}
 
 html {
   position: relative;
@@ -14,7 +18,7 @@ html {
 
 body {
   overflow-x: hidden;
-  margin-bottom: 60px;
+  margin-bottom: $footer-height;
 }
 
 .section {
@@ -29,5 +33,5 @@ body {
 
 .teaser-section {
   @extend .section;
-  background-color: red;
+  background-color: rgba(255, 169, 0, 0.4);
 }

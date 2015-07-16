@@ -57,10 +57,6 @@ nav.navbar-shrink .navbar-toggle {
   padding: 4px 5px;
   margin: 8px 15px 8px 0; }
 
-.carousel img {
-  margin: auto;
-  height: 60vh !important; }
-
 .footer {
   position: absolute;
   bottom: 0;
@@ -71,6 +67,9 @@ nav.navbar-shrink .navbar-toggle {
 
 .nav, .pagination, .carousel, .panel-title a {
   cursor: pointer; }
+
+.row {
+  margin: 0; }
 
 html {
   position: relative;
@@ -88,6 +87,6 @@ body {
   background-color: #201f21; }
 
 .teaser-section {
-  background-color: red; }
+  background-color: rgba(255, 169, 0, 0.4); }
 
 /*# sourceMappingURL=main.css.map */

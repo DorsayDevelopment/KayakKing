@@ -1,1 +1,1 @@
-var app = angular.module("kayakking", ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
+var app = angular.module("kayakking", ['ngRoute', 'ngAnimate']);

@@ -114,7 +114,7 @@ module.exports = function(grunt) {
         files: ['assets/scss/main.css'],
         tasks: ['sass']
       },
-      js: {
+      angular: {
         files: [
           'app/app.module.js',
           'app/app.routes.js',
@@ -125,6 +125,14 @@ module.exports = function(grunt) {
           'concat',
           'uglify',
           'jshint'
+        ]
+      },
+      actions: {
+        files: [
+          'assets/js/*.js'
+        ],
+        tasks: [
+          'concat'
         ]
       },
       html: {
