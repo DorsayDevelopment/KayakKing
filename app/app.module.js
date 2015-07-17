@@ -1,1 +1,1 @@
-var app = angular.module("kayakking", ['ngRoute', 'ngAnimate']);
+var app = angular.module("kayakking", ['ngRoute', 'ngAnimate', 'uiGmapgoogle-maps']);
