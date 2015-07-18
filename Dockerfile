@@ -8,6 +8,8 @@ ADD . /src
 # install dependencies
 RUN     npm install
 RUN     bower install --allow-root
+RUN     sudo apt-get -y install ruby-full
+RUN     sudo gem install sass
 RUN     grunt build
 
 # Run application
