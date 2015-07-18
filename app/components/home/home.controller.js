@@ -11,6 +11,8 @@ app.controller('HomeController', function($scope, $location) {
     }
   ];
 
+  $scope.map = { center: { latitude: 49.2807185, longitude: -124.1469438 }, zoom: 11 };
+
   $(document).ready(function(){
     $('.slider').slider({
       full_width: true,
