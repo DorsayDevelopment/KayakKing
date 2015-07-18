@@ -13,5 +13,5 @@ RUN     sudo gem install sass
 RUN     grunt build
 
 # Run application
-EXPOSE  9000
+EXPOSE  80
 CMD ["nodemon", "server.js"]
