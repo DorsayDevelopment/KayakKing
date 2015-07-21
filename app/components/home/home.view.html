@@ -49,15 +49,15 @@
 
 <div class="row teaser-section">
     <div class="container center">
-        <div class="col-md-4">
+        <div class="col-md-4 teaser">
             <h4>Teaser Heading</h4>
             <p>one</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 teaser">
             <h4>Teaser Heading</h4>
             <p>two</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 teaser">
             <h4>Teaser Heading</h4>
             <p>three</p>
         </div>
@@ -65,8 +65,19 @@
 </div>
 
 <div class="row map-section">
-    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+    <ui-gmap-google-map center='map.center' zoom='map.zoom' options="map.options"></ui-gmap-google-map>
 </div>
 
+<div class="row contact-section">
+    <div class="container center">
+        <h4>Contact Us</h4>
+    </div>
+    <ul class="center">
+        <li><i class="fa fa-facebook-official fa-4x"></i></li>
+        <li><i class="fa fa-phone fa-4x"></i></li>
+        <li><i class="fa fa-envelope-square fa-4x"></i></li>
+        <li></li>
+    </ul>
+</div>
 
 <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>

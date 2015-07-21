@@ -26,14 +26,25 @@ body {
 }
 
 .main-section {
-  @extend .section;
   height: $main-section-height;
   background-color: $main-section-background;
 }
 
 .teaser-section {
-  @extend .section;
+  position: relative;
+  padding: $teaser-height / 3;
   background-color: rgba(255, 169, 0, 0.4);
 }
 
-.angular-google-map-container { height: $section-height; }
+.contact-section {
+  ul {
+    list-style-type: none;
+    li {
+      display: inline;
+    }
+  }
+}
+
+.angular-google-map-container {
+  height: $map-section-height;
+}

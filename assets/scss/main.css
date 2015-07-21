@@ -79,15 +79,22 @@ body {
   overflow-x: hidden;
   margin-bottom: 60px; }
 
-.section, .main-section, .teaser-section {
-  height: 500px; }
+.section {
+  height: 200px; }
 
 .main-section {
   height: 60vh;
   background-color: #201f21; }
 
 .teaser-section {
+  position: relative;
+  padding: 66.66667px;
   background-color: rgba(255, 169, 0, 0.4); }
+
+.contact-section ul {
+  list-style-type: none; }
+  .contact-section ul li {
+    display: inline; }
 
 .angular-google-map-container {
   height: 500px; }
