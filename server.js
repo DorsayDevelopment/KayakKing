@@ -3,7 +3,7 @@ var http = require('http');
 
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/'));
 
 var port = 80;
 http.createServer(app).listen(port, function() {
