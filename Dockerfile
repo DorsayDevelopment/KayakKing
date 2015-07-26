@@ -3,7 +3,7 @@ FROM brymastr/angular:latest
 
 # Add to working dir
 WORKDIR /src
-COPY . /src/
+ADD . /src
 
 # install dependencies
 RUN     npm install
