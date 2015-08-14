@@ -11,6 +11,18 @@ app.controller('HomeController', function($scope, $location) {
     }
   ];
 
+  // Slider
+  $(document).ready(function(){
+    $('.slider').slider({
+      full_width: true,
+      height: '60vh',
+      indicators: false
+    });
+  });
+
+  // Links
+  $scope.facebook = "http://facebook.com";
+
   // Map
   $scope.map = {
     center: {
@@ -22,13 +34,4 @@ app.controller('HomeController', function($scope, $location) {
       scrollwheel: false
     }
   };
-
-  // Slider
-  $(document).ready(function(){
-    $('.slider').slider({
-      full_width: true,
-      height: '60vh',
-      indicators: false
-    });
-  });
 });
