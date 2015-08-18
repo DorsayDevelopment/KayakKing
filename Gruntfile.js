@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     },
     nodemon: {
       dev: {
-        script: 'server.js'
+        script: 'public/server.js'
       }
     },
     concat: {
@@ -88,6 +88,11 @@ module.exports = function(grunt) {
           }, {
             src: 'server.js',
             dest: 'public/'
+          }, {
+            expand: true,
+            cwd: 'node_modules/',
+            src: 'express/**',
+            dest: 'public/dependencies/'
           }
         ]
       }
