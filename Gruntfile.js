@@ -85,6 +85,9 @@ module.exports = function(grunt) {
             cwd: 'bower_components/',
             src: '**',
             dest: 'public/vendor/'
+          }, {
+            src: 'server.js',
+            dest: 'public/'
           }
         ]
       }
