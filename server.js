@@ -1,4 +1,4 @@
-var express = require('./dependencies/lib/express');
+var express = require('./dependencies/express/lib/express');
 var http = require('http');
 
 var app = express();
