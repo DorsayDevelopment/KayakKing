@@ -1,6 +1,9 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+  // Grunt parameters
+  var env = grunt.option('env') || 'dev';
+
   // Project configuration.
   grunt.initConfig({
     // Metadata.
@@ -16,7 +19,7 @@ module.exports = function(grunt) {
     },
     nodemon: {
       dev: {
-        script: 'public/server.js'
+        script: 'server.js'
       }
     },
     concat: {
@@ -27,11 +30,11 @@ module.exports = function(grunt) {
           'app/components/**/*.js',
           'app/shared/**/*.js'
         ],
-        dest: 'public/app.min.js'
+        dest: 'dist/app.min.js'
       },
       actions: {
         src: 'assets/js/*.js',
-        dest: 'public/js/main.min.js'
+        dest: 'dist/js/main.min.js'
       }
     },
     uglify: {
@@ -39,27 +42,44 @@ module.exports = function(grunt) {
         mangle: false
       },
       app: {
-        src: 'public/app.min.js',
-        dest: 'public/app.min.js'
+        src: 'dist/app.min.js',
+        dest: 'dist/app.min.js'
       },
       actions: {
-        src: 'public/js/main.min.js',
-        dest: 'public/js/main.min.js'
+        src: 'dist/js/main.min.js',
+        dest: 'dist/js/main.min.js'
       }
     },
     sass: {
-      dist: {
+      prod: {
         options: {
           style: 'compressed',
           noCache: true
         },
         files: {
-          'public/css/style.css': 'assets/scss/main.scss'
+          'dist/css/style.css': 'assets/scss/main.scss'
+        }
+      },
+      stage: {
+        options: {
+          style: 'compressed',
+          noCache: true
+        },
+        files: {
+          'dist/css/style.css': 'assets/scss/main.scss'
+        }
+      },
+      dev: {
+        options: {
+          noCache: true
+        },
+        files: {
+          'assets/scss/style.css': 'assets/scss/main.scss'
         }
       }
     },
     copy: {
-      app: {
+      prod: {
         files: [
           {
             expand: true,
@@ -67,43 +87,78 @@ module.exports = function(grunt) {
               'app/components/**/*.html',
               'app/shared/**/*.html'
             ],
-            dest: 'public/views',
+            dest: 'dist/views',
             flatten: true
           }, {
             expand: true,
             src: 'app/index.html',
-            dest: 'public/',
+            dest: 'dist/',
             flatten: true
           }, {
             expand: true,
             cwd: 'assets/img/',
             src: '**',
-            dest: 'public/img/',
+            dest: 'dist/img/',
             flatten: false
           }, {
             expand: true,
             cwd: 'bower_components/',
             src: '**',
-            dest: 'public/vendor/'
+            dest: 'dist/vendor/'
           }, {
             src: 'server.js',
-            dest: 'public/'
+            dest: 'dist/'
           }, {
             expand: true,
             cwd: 'node_modules/',
             src: 'express/**',
-            dest: 'public/dependencies/'
+            dest: 'dist/dependencies/'
+          }, {
+            src: 'config/config.prod.js',
+            dest: 'dist/config/config.js'
+          }
+        ]
+      },
+      stage: {
+        files: [
+          {
+            expand: true,
+            src: [
+              'app/components/**/*.html',
+              'app/shared/**/*.html'
+            ],
+            dest: 'dist/views',
+            flatten: true
+          }, {
+            expand: true,
+            src: 'app/index.html',
+            dest: 'dist/',
+            flatten: true
+          }, {
+            expand: true,
+            cwd: 'assets/img/',
+            src: '**',
+            dest: 'dist/img/',
+            flatten: false
+          }, {
+            expand: true,
+            cwd: 'bower_components/',
+            src: '**',
+            dest: 'dist/vendor/'
+          }, {
+            src: 'server.js',
+            dest: 'dist/'
+          }, {
+            expand: true,
+            cwd: 'node_modules/',
+            src: 'express/**',
+            dest: 'dist/dependencies/'
+          }, {
+            src: 'config/config.staging.js',
+            dest: 'dist/config/config.js'
           }
         ]
       }
-    },
-    jshint: {
-      all: [
-        'Gruntfile.js',
-        'app/*.js',
-        'app/**/*.js',
-        'assets/js/*.js'
-      ]
     },
     watch: {
       options: {
@@ -120,7 +175,7 @@ module.exports = function(grunt) {
           livereload: false
         },
         files: ['assets/scss/main.css'],
-        tasks: ['sass']
+        tasks: ['sass:dev']
       },
       angular: {
         files: [
@@ -129,19 +184,13 @@ module.exports = function(grunt) {
           'app/components/**/*.js',
           'app/shared/**/*.js'
         ],
-        tasks: [
-          'concat',
-          'uglify',
-          'jshint'
-        ]
+        tasks: []
       },
       actions: {
         files: [
           'assets/js/*.js'
         ],
-        tasks: [
-          'concat'
-        ]
+        tasks: []
       },
       html: {
         files: [
@@ -149,16 +198,14 @@ module.exports = function(grunt) {
           'app/shared/**/*.html',
           'app/index.html'
         ],
-        tasks: ['copy']
+        tasks: []
       },
       css: {
-        files: 'public/css/style.css',
+        files: 'dist/css/style.css',
         tasks: []
       }
     },
-    auto_install: {
-      local: {}
-    }
+    clean: ['dist']
 
   });
 
@@ -166,23 +213,21 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-auto-install');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Register tasks
   grunt.registerTask('build', [
+    'clean',
     'concat',
     'uglify',
-    'sass',
-    'copy'
+    'sass:' + env,
+    'copy:' + env
   ]);
 
-  grunt.registerTask('default', ['build', 'concurrent:target']);
-
-  grunt.registerTask('install', 'auto_install');
+  grunt.registerTask('default', ['concurrent']);
 
 };
