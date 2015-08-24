@@ -1,3 +1,5 @@
+[![Build Status](http://build.brycendorsay.com/buildStatus/icon?job=Kayak-dev&build=24)](http://build.brycendorsay.com/job/Kayak-dev/24/)
+
 # Angular-Starter
 Angular-Starter is an Angular.js project template to help get you started on your own Angular project. The template provides a solid foundation for your app. Benefits include a good folder structure, several Angular dependencies, SASS, and some prebuilt grunt tasks.
 
