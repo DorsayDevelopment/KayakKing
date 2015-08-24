@@ -30,7 +30,7 @@ node_modules
 bower_components
 
 # Public build directory
-public
+dist
 
 # JetBrains idea directory
 .idea
