@@ -1,9 +1,8 @@
-app.config(function($routeProvider, $locationProvider) {
+app.config(function($routeProvider, $locationProvider, homeDir) {
   $routeProvider
     .when('/', {
-      templateUrl: 'views/home.view.html',
-      controller: 'HomeController',
-
+      templateUrl: homeDir + '/home.view.html',
+      controller: 'HomeController'
     });
 
   //$locationProvider.html5Mode(true);

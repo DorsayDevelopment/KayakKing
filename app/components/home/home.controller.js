@@ -1,15 +1,9 @@
 /**
  * Created by brycen on 15-03-05.
  */
-app.controller('HomeController', function($scope, $location) {
+app.controller('HomeController', function($scope, $location, imgDir) {
 
-  $scope.slides = [
-    {
-      img: 'img/carousel/kayaksun1.jpg',
-      heading: 'Go Kayaking',
-      caption: 'A wonderful kayaking adventure'
-    }
-  ];
+  $scope.imgDir = imgDir;
 
   // Slider
   $(document).ready(function(){

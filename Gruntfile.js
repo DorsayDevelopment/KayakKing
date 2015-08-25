@@ -25,7 +25,7 @@ module.exports = function(grunt) {
     concat: {
       app: {
         src: [
-          'app/app.module.js',
+          'app/app.module.prod.js',
           'app/app.routes.js',
           'app/components/**/*.js',
           'app/shared/**/*.js'
@@ -90,10 +90,8 @@ module.exports = function(grunt) {
             dest: 'dist/views',
             flatten: true
           }, {
-            expand: true,
-            src: 'app/index.html',
-            dest: 'dist/',
-            flatten: true
+            src: 'app/index.prod.html',
+            dest: 'dist/index.html'
           }, {
             expand: true,
             cwd: 'assets/img/',
@@ -130,10 +128,8 @@ module.exports = function(grunt) {
             dest: 'dist/views',
             flatten: true
           }, {
-            expand: true,
-            src: 'app/index.html',
-            dest: 'dist/',
-            flatten: true
+            src: 'app/index.prod.html',
+            dest: 'dist/index.html'
           }, {
             expand: true,
             cwd: 'assets/img/',
@@ -196,7 +192,7 @@ module.exports = function(grunt) {
         files: [
           'app/components/**/*.html',
           'app/shared/**/*.html',
-          'app/index.html'
+          'index.html'
         ],
         tasks: []
       },
