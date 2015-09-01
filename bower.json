@@ -24,6 +24,7 @@
     "angular-bootstrap": "~0.13.0",
     "materialize": "~0.97.0",
     "angular-google-maps": "~2.1.5",
-    "fontawesome": "~4.3.0"
+    "fontawesome": "~4.3.0",
+    "jquery-ui": "~1.11.4"
   }
 }

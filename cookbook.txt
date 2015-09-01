@@ -1,0 +1,9 @@
+This file is to provide instructions on how to use and develop this application. It should also help explain the reasoning behind some of the decisions made during development.
+
+Building
+
+grunt build --env=[stage|prod]
+Running locally in dev just use task 'grunt'
+The code is not built for dev. It is just run as-is. This makes development a lot quicker and running the app is simpler.
+
+There are three config files in the '/config' directory. When running in dev the file called 'config.js' is used for several app configurations. When building for staging or production the appropriate config file is copied to the dist folder and renamed to config.js.

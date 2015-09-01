@@ -1,6 +1,6 @@
-app.directive('footerDirective', function () {
+app.directive('footerDirective', function (footerDir) {
   return {
     restrict: 'E',
-    templateUrl: 'views/footer.view.html'
+    templateUrl: footerDir + '/footer.view.html'
   };
 });

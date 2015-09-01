@@ -34,3 +34,5 @@ dist
 
 # JetBrains idea directory
 .idea
+
+assets/scss/*.css*

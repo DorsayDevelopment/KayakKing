@@ -1,15 +1,9 @@
 /**
  * Created by brycen on 15-03-05.
  */
-app.controller('HomeController', function($scope, $location) {
+app.controller('HomeController', function($scope, $location, imgDir) {
 
-  $scope.slides = [
-    {
-      img: 'img/carousel/kayaksun1.jpg',
-      heading: 'Go Kayaking',
-      caption: 'A wonderful kayaking adventure'
-    }
-  ];
+  $scope.imgDir = imgDir;
 
   // Slider
   $(document).ready(function(){
@@ -34,4 +28,23 @@ app.controller('HomeController', function($scope, $location) {
       scrollwheel: false
     }
   };
+
+  // Nav
+  $('#home-nav').click(function() {
+    $('html, body').animate({
+      scrollTop: $('html').offset().top
+    }, 'slow', 'easeInOutQuart');
+  });
+
+  $('#location-nav').click(function() {
+    $('html, body').animate({
+      scrollTop: $('#location').offset().top - 50
+    }, 'slow', 'easeInOutQuart');
+  });
+
+  $('#contact-nav, .caption>a').click(function() {
+    $('html, body').animate({
+      scrollTop: $('#contact').offset().top - 50
+    }, 'slow', 'easeInOutQuart');
+  });
 });

@@ -3,14 +3,14 @@
 
 nav a {
   font-size: $menu-font-size-full;
-  color: $header-font-color !important;
+  color: $text-color !important;
   $transitions: 'font-size', 'height';
   @include transition($transitions, 0.2s);
 }
 
 li.active {
   a {
-    color: $header-font-color !important;
+    color: $text-color !important;
   }
 }
 
@@ -39,6 +39,9 @@ nav .navbar-toggle {
   font-size: $title-font-size-full;
   padding-top: 25px;
   padding-bottom: 25px;
+  @include vpw(440px) {
+    font-size: large;
+  };
 }
 
 nav.navbar.navbar-shrink {
@@ -54,14 +57,17 @@ nav.navbar-shrink li a {
   line-height: $header-size-shrink;
   padding-top: 15px;
   padding-bottom: 15px;
-  color: $header-font-color !important;
+  color: $text-color !important;
 }
 
 nav.navbar-shrink .navbar-brand {
   font-size: $title-font-size-shrink;
   padding-top: 15px;
   padding-bottom: 15px;
-  color: $header-font-color !important;
+  color: $text-color !important;
+  @include vpw(440px) {
+    font-size: large;
+  };
 }
 
 nav.navbar-shrink .navbar-toggle {

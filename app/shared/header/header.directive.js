@@ -1,6 +1,6 @@
-app.directive('headerDirective', function () {
+app.directive('headerDirective', function (headerDir) {
   return {
     restrict: 'E',
-    templateUrl: 'views/header.view.html'
+    templateUrl: headerDir + '/header.view.html'
   };
 });
