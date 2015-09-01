@@ -28,4 +28,23 @@ app.controller('HomeController', function($scope, $location, imgDir) {
       scrollwheel: false
     }
   };
+
+  // Nav
+  $('#home-nav').click(function() {
+    $('html, body').animate({
+      scrollTop: $('html').offset().top
+    }, 'slow', 'easeInOutQuart');
+  });
+
+  $('#location-nav').click(function() {
+    $('html, body').animate({
+      scrollTop: $('#location').offset().top - 50
+    }, 'slow', 'easeInOutQuart');
+  });
+
+  $('#contact-nav').click(function() {
+    $('html, body').animate({
+      scrollTop: $('#contact').offset().top - 50
+    }, 'slow', 'easeInOutQuart');
+  });
 });
