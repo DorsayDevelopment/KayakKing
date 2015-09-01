@@ -33,6 +33,9 @@ nav .navbar-toggle {
   font-size: 25pt;
   padding-top: 25px;
   padding-bottom: 25px; }
+  @media only screen and (max-width: 440px) {
+    .navbar-brand {
+      font-size: large; } }
 
 nav.navbar.navbar-shrink {
   height: 20px;
@@ -52,6 +55,9 @@ nav.navbar-shrink .navbar-brand {
   padding-top: 15px;
   padding-bottom: 15px;
   color: #e6e6e6 !important; }
+  @media only screen and (max-width: 440px) {
+    nav.navbar-shrink .navbar-brand {
+      font-size: large; } }
 
 nav.navbar-shrink .navbar-toggle {
   padding: 4px 5px;
@@ -96,8 +102,9 @@ a {
 
 .teaser-section {
   position: relative;
-  padding: 66.66667px;
   background-color: #E9EBF0; }
+  .teaser-section .teaser {
+    padding: 80px; }
 
 .contact-section {
   padding: 50px 0;

@@ -39,6 +39,9 @@ nav .navbar-toggle {
   font-size: $title-font-size-full;
   padding-top: 25px;
   padding-bottom: 25px;
+  @include vpw(440px) {
+    font-size: large;
+  };
 }
 
 nav.navbar.navbar-shrink {
@@ -62,6 +65,9 @@ nav.navbar-shrink .navbar-brand {
   padding-top: 15px;
   padding-bottom: 15px;
   color: $text-color !important;
+  @include vpw(440px) {
+    font-size: large;
+  };
 }
 
 nav.navbar-shrink .navbar-toggle {

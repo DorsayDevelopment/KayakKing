@@ -197,7 +197,7 @@ module.exports = function(grunt) {
         tasks: []
       },
       css: {
-        files: 'dist/css/style.css',
+        files: 'assets/scss/style.css',
         tasks: []
       }
     },

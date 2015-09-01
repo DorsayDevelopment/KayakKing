@@ -43,8 +43,10 @@ a {
 
 .teaser-section {
   position: relative;
-  padding: $teaser-height / 3;
   background-color: $teaser-section-background;
+  .teaser {
+    padding: $teaser-height;
+  }
 }
 
 .contact-section {

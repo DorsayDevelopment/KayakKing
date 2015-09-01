@@ -42,7 +42,7 @@ app.controller('HomeController', function($scope, $location, imgDir) {
     }, 'slow', 'easeInOutQuart');
   });
 
-  $('#contact-nav').click(function() {
+  $('#contact-nav, .caption>a').click(function() {
     $('html, body').animate({
       scrollTop: $('#contact').offset().top - 50
     }, 'slow', 'easeInOutQuart');
