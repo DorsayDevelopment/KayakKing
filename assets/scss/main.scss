@@ -45,7 +45,7 @@ a {
   position: relative;
   background-color: $teaser-section-background;
   .teaser {
-    padding: $teaser-height;
+    padding: $teaser-height 0;
   }
 }
 
