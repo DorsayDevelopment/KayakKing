@@ -29,6 +29,19 @@ app.controller('HomeController', function($scope, $location, imgDir) {
     }
   };
 
+  $scope.contactFormHidden = true;
+
+  // Contact form visibility
+  $('#toggle-contact').click(function() {
+    if($scope.contactFormHidden) {
+      $('#contact-form').slideDown();
+      $scope.contactFormHidden = false;
+    } else {
+      $('#contact-form').slideUp();
+      $scope.contactFormHidden = true;
+    }
+  });
+
   // Nav
   $('#home-nav').click(function() {
     $('html, body').animate({

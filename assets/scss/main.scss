@@ -42,7 +42,6 @@ a {
 }
 
 .teaser-section {
-  position: relative;
   background-color: $teaser-section-background;
   .teaser {
     padding: $teaser-height 0;
@@ -53,6 +52,11 @@ a {
   padding: 50px 0;
   background-image: url(../img/contact_background_dark.jpg);
   color: $text-color;
+}
+
+.info-section {
+  padding: 50px 0;
+
 }
 
 .contact-item {
@@ -77,4 +81,8 @@ a {
   border-bottom: 1px $text-color solid;
   margin: auto;
   width: 110px;
+}
+
+.initially-hidden {
+  display: none;
 }
