@@ -45,10 +45,14 @@ app.controller('HomeController', function($scope, $location, imgDir) {
   // Contact form visibility
   $('#toggle-contact').click(function() {
     if($scope.contactFormHidden) {
-      $('#contact-form').slideDown();
+      $('#contact-form').slideDown(function() {
+        $('#toggle-contact').text('Hide');
+      });
       $scope.contactFormHidden = false;
     } else {
-      $('#contact-form').slideUp();
+      $('#contact-form').slideUp(function() {
+        $('#toggle-contact').text('Book Now');
+      });
       $scope.contactFormHidden = true;
     }
   });
