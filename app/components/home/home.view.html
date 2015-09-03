@@ -12,25 +12,25 @@
             <li>
                 <img ng-src="{{imgDir}}/carousel/kayaksun2.jpg">
                 <div class="caption left-align">
-                    <h3>Other heading</h3>
-                    <h5 class="light grey-text text-lighten-3">you'd better finish this soon</h5>
-                    <a class="waves-effect waves-light btn-large purple lighten-2">Book Now</a>
+                    <h3>undecided text</h3>
+                    <h5 class="light grey-text text-lighten-3">Find something to say here</h5>
+                    <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
                 </div>
             </li>
             <li>
                 <img ng-src="{{imgDir}}/carousel/arrowsmith.jpg">
                 <div class="caption right-align">
                     <h3>Another heading thing</h3>
-                    <h5 class="light grey-text text-lighten-3">it's not late enough to quit</h5>
-                    <a class="waves-effect waves-light btn-large indigo lighten-2">Book Now</a>
+                    <h5 class="light grey-text text-lighten-3">Also here</h5>
+                    <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
                 </div>
             </li>
             <li>
                 <img ng-src="{{imgDir}}/carousel/brickyard.jpg">
                 <div class="caption right-align">
-                    <h3>Lines of text</h3>
-                    <h5 class="light grey-text text-lighten-3">you're not alone here</h5>
-                    <a class="waves-effect waves-light btn-large cyan lighten-2">Book Now</a>
+                    <h3>Good place to put text</h3>
+                    <h5 class="light grey-text text-lighten-3">This needs something too</h5>
+                    <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
                 </div>
             </li>
             <li>
@@ -38,15 +38,15 @@
                 <div class="caption bottom-align">
                     <h3>Catch a sunset</h3>
                     <h5 class="light grey-text text-lighten-3">Watch the sun go down over the horizon<br> from one of our safe and sturdy kayaks</h5>
-                    <a class="waves-effect waves-light btn-large blue-grey lighten-2">Book Now</a>
+                    <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
                 </div>
             </li>
             <li>
                 <img ng-src="{{imgDir}}/carousel/water1.jpg">
                 <div class="caption center-align">
                     <h3>Meet the wildlife</h3>
-                    <h5 class="light grey-text text-lighten-3">Rendezvous with some sea lions<br> and maybe even a whale</h5>
-                    <a class="waves-effect waves-light btn-large orange lighten-1">Book Now</a>
+                    <h5 class="light grey-text text-lighten-3">Rendezvous with sea lions<br> and maybe even a whale</h5>
+                    <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
                 </div>
             </li>
         </ul>
@@ -54,24 +54,88 @@
 </div>
 
 <div class="row teaser-section">
-    <div class="container center">
+    <div class="container-fluid center">
         <div class="col-md-4 teaser">
             <h4>Guided Tours</h4>
             <p>Embark on a guided ocean adventure off of Vancouver Island's eastern shores</p>
         </div>
         <div class="col-md-4 teaser">
             <h4>Daily Trips</h4>
-            <p>two</p>
+            <p>Mornings 7:00am to 10:00am</p>
+            <p>Afternoons 1:00pm to 4:00pm</p>
+            <p>Evenings 6:00pm to 9:00pm</p>
         </div>
         <div class="col-md-4 teaser">
             <h4>Schedule an adventure</h4>
-            <p>three</p>
+            <p>Tours scheduled all year long</p>
+            <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
         </div>
     </div>
 </div>
 
 <div class="row map-section" id="location">
     <ui-gmap-google-map center='map.center' zoom='map.zoom' options="map.options"></ui-gmap-google-map>
+</div>
+
+<div class="row info-section" id="info">
+    <div class="container center">
+        <div class="col-md-6">
+            <h4>Individuals or groups up to 4 people</h4>
+            <h3>$30</h3>
+        </div>
+        <div class="col-md-6">
+            <h4>Groups of 5 to 7 people</h4>
+            <h3>$35</h3>
+        </div>
+
+        <div class="col-md-12">
+            <a class="waves-light waves-effect btn-large red lighten-1" id="toggle-contact">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="row contact-form-section initially-hidden" id="contact-form">
+    <div class="container">
+        <div class="col-md-12 center">
+            <h4 class="text-uppercase">Contact Form</h4>
+            <p>Give us a shout if you'd like to book a time or even just to get some more information. Email, phone, or both is required</p>
+        </div>
+        <div class="input-field col-md-4">
+            <i class="material-icons prefix">person_pin</i>
+            <input type="text" id="form-name"/>
+            <label for="form-name">Contact name</label>
+        </div>
+        <div class="input-field col-md-4">
+            <i class="material-icons prefix">email</i>
+            <input type="email" id="form-email" class="validate"/>
+            <label for="form-phone">Email Address</label>
+        </div>
+        <div class="input-field col-md-4">
+            <i class="material-icons prefix">phone</i>
+            <input type="email" id="form-phone" class="validate"/>
+            <label for="form-phone">Phone</label>
+        </div>
+        <div class="input-field col-md-3 col-md-offset-3">
+            <i class="material-icons prefix">schedule</i>
+            <input type="date" class="datepicker" id="form-date">
+            <label for="form-date">Date (if interested)</label>
+        </div>
+        <div class="input-field col-md-2">
+            <select>
+                <option value="" disabled selected>Choose a time</option>
+                <option value="morning">Morning (7-10)</option>
+                <option value="afternoon">Afternoon (1-4)</option>
+                <option value="evening">Evening (5-9))</option>
+            </select>
+            <label>Time of day</label>
+        </div>
+        <div class="input-field col-md-12">
+            <i class="material-icons prefix">message</i>
+            <textarea cols="30" rows="10" id="form-message" class="materialize-textarea"></textarea>
+            <label for="form-message">Message (optional)</label>
+        </div>
+    </div>
+    <a class="waves-effect waves-light btn-large red lighten-1 col-md-2 col-xs-offset-5">Submit</a>
 </div>
 
 <div class="row contact-section" id="contact">

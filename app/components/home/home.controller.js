@@ -14,6 +14,17 @@ app.controller('HomeController', function($scope, $location, imgDir) {
     });
   });
 
+  // Date picker
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+
+  // Select
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+
   // Links
   $scope.facebook = "http://facebook.com";
 
@@ -28,6 +39,23 @@ app.controller('HomeController', function($scope, $location, imgDir) {
       scrollwheel: false
     }
   };
+
+  $scope.contactFormHidden = true;
+
+  // Contact form visibility
+  $('#toggle-contact').click(function() {
+    if($scope.contactFormHidden) {
+      $('#contact-form').slideDown(function() {
+        $('#toggle-contact').text('Hide');
+      });
+      $scope.contactFormHidden = false;
+    } else {
+      $('#contact-form').slideUp(function() {
+        $('#toggle-contact').text('Book Now');
+      });
+      $scope.contactFormHidden = true;
+    }
+  });
 
   // Nav
   $('#home-nav').click(function() {

@@ -101,15 +101,20 @@ a {
   background-color: #201f21; }
 
 .teaser-section {
-  position: relative;
   background-color: #E9EBF0; }
   .teaser-section .teaser {
-    padding: 80px; }
+    padding: 80px 0; }
 
 .contact-section {
   padding: 50px 0;
   background-image: url(../img/contact_background_dark.jpg);
   color: #e6e6e6; }
+
+.info-section {
+  padding: 50px 0; }
+
+.contact-form-section {
+  padding-bottom: 50px; }
 
 .contact-item {
   margin-top: 30px; }
@@ -129,5 +134,8 @@ a {
   border-bottom: 1px #e6e6e6 solid;
   margin: auto;
   width: 110px; }
+
+.initially-hidden {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */
