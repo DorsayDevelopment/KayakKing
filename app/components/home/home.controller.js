@@ -14,6 +14,17 @@ app.controller('HomeController', function($scope, $location, imgDir) {
     });
   });
 
+  // Date picker
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+
+  // Select
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+
   // Links
   $scope.facebook = "http://facebook.com";
 

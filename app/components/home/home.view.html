@@ -96,8 +96,46 @@
 
 <div class="row contact-form-section initially-hidden" id="contact-form">
     <div class="container">
-        form
+        <div class="col-md-12 center">
+            <h4 class="text-uppercase">Contact Form</h4>
+            <p>Give us a shout if you'd like to book a time or even just to get some more information. Email, phone, or both is required</p>
+        </div>
+        <div class="input-field col-md-4">
+            <i class="material-icons prefix">person_pin</i>
+            <input type="text" id="form-name"/>
+            <label for="form-name">Contact name</label>
+        </div>
+        <div class="input-field col-md-4">
+            <i class="material-icons prefix">email</i>
+            <input type="email" id="form-email" class="validate"/>
+            <label for="form-phone">Email Address</label>
+        </div>
+        <div class="input-field col-md-4">
+            <i class="material-icons prefix">phone</i>
+            <input type="email" id="form-phone" class="validate"/>
+            <label for="form-phone">Phone</label>
+        </div>
+        <div class="input-field col-md-3 col-md-offset-3">
+            <i class="material-icons prefix">schedule</i>
+            <input type="date" class="datepicker" id="form-date">
+            <label for="form-date">Date (if interested)</label>
+        </div>
+        <div class="input-field col-md-2">
+            <select>
+                <option value="" disabled selected>Choose a time</option>
+                <option value="morning">Morning (7-10)</option>
+                <option value="afternoon">Afternoon (1-4)</option>
+                <option value="evening">Evening (5-9))</option>
+            </select>
+            <label>Time of day</label>
+        </div>
+        <div class="input-field col-md-12">
+            <i class="material-icons prefix">message</i>
+            <textarea cols="30" rows="10" id="form-message" class="materialize-textarea"></textarea>
+            <label for="form-message">Message (optional)</label>
+        </div>
     </div>
+    <a class="waves-effect waves-light btn-large red lighten-1 col-md-2 col-md-offset-5">Submit</a>
 </div>
 
 <div class="row contact-section" id="contact">
