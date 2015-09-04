@@ -1,7 +1,7 @@
 /**
  * Created by brycen on 15-03-05.
  */
-app.controller('HomeController', function($scope, $location, imgDir) {
+app.controller('HomeController', function($scope, $location, $http, imgDir) {
 
   $scope.imgDir = imgDir;
 
@@ -68,12 +68,34 @@ app.controller('HomeController', function($scope, $location, imgDir) {
       $scope.form.date = picker.get();
       $scope.form.time = $('#form-time').val();
       console.log($scope.form);
-      $('#contact-form').slideUp(function() {
-        $('#toggle-contact').fadeOut(function() {
-          $('#thankyou').fadeIn();
-        });
-      });
+      //$('#contact-form').slideUp(function() {
+      //  $('#toggle-contact').fadeOut(function() {
+      //    $('#thankyou').fadeIn();
+      //  });
+      //});
+      send_email();
     });
+
+  function send_email() {
+    var req = {
+      method: 'POST',
+      url: 'https://api.sendgrid.com/api/mail.send.json',
+      headers: {
+        'Content-Type': 'Content-Type: application/json'
+      },
+      data: {
+        api_user: 'brymastr',
+        to: 'dorsay@live.ca',
+        subject: 'Test subject',
+        from: 'info@parksvillekayaking.ca',
+        html: "body"
+      }
+    };
+    console.log('Sending request');
+    $http.post('http://localhost:9000/api/email', req, function(res) {
+      console.log('Response: ' + res);
+    });
+  }
 
   // Nav
   $('#home-nav').click(function() {

@@ -17,6 +17,7 @@
     "grunt-nodemon": "^0.4.0"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "sendgrid": "^1.9.2"
   }
 }
