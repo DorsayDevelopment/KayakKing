@@ -138,4 +138,9 @@ a {
 .initially-hidden {
   display: none; }
 
+.input-field .prefix ~ input, .input-field .prefix ~ textarea, .input-field .prefix ~ div.select-wrapper {
+  margin-left: 3rem;
+  width: 92%;
+  width: calc(100% - 3rem); }
+
 /*# sourceMappingURL=main.css.map */

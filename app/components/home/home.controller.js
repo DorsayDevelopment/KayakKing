@@ -5,25 +5,28 @@ app.controller('HomeController', function($scope, $location, imgDir) {
 
   $scope.imgDir = imgDir;
 
-  // Slider
+  // Initialize things
   $(document).ready(function(){
     $('.slider').slider({
       full_width: true,
       height: '60vh',
       indicators: false
     });
+
+    $('select').material_select();
+    $('select').parent().find('.caret').remove();
+
+
   });
 
   // Date picker
-  $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
+  var CurrentDate = new Date();
+  var $input = $('.datepicker').pickadate({
+    selectMonths: true,
+    selectYears: 1,
+    min: CurrentDate
   });
-
-  // Select
-  $(document).ready(function() {
-    $('select').material_select();
-  });
+  var picker = $input.pickadate('picker');
 
   // Links
   $scope.facebook = "http://facebook.com";
@@ -57,6 +60,21 @@ app.controller('HomeController', function($scope, $location, imgDir) {
     }
   });
 
+
+  $scope.form = {};
+  //$scope.form.time =
+  $('#form-submit')
+    .click(function() {
+      $scope.form.date = picker.get();
+      $scope.form.time = $('#form-time').val();
+      console.log($scope.form);
+      $('#contact-form').slideUp(function() {
+        $('#toggle-contact').fadeOut(function() {
+          $('#thankyou').fadeIn();
+        });
+      });
+    });
+
   // Nav
   $('#home-nav').click(function() {
     $('html, body').animate({
@@ -75,4 +93,5 @@ app.controller('HomeController', function($scope, $location, imgDir) {
       scrollTop: $('#contact').offset().top - 50
     }, 'slow', 'easeInOutQuart');
   });
+
 });
