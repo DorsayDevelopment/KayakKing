@@ -112,7 +112,16 @@ app.controller('HomeController', function($scope, $location, $http, imgDir) {
 
   $('#contact-nav, .caption>a').click(function() {
     $('html, body').animate({
-      scrollTop: $('#contact').offset().top - 50
+      scrollTop: $('#contact-form').offset().top - 50
+    }, 'slow', 'easeInOutQuart');
+    if($('#contact-form').css('display') == 'none') {
+      $('#toggle-contact').trigger('click');
+    }
+  });
+
+  $('#info-nav').click(function() {
+    $('html, body').animate({
+      scrollTop: $('#info').offset().top
     }, 'slow', 'easeInOutQuart');
   });
 
