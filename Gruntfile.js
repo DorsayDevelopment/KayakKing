@@ -12,7 +12,8 @@ module.exports = function(grunt) {
       target: {
         tasks: [
           'watch',
-          'nodemon'
+          'nodemon',
+          'open'
         ],
         options: {logConcurrentOutput: true}
       }
@@ -201,7 +202,13 @@ module.exports = function(grunt) {
         tasks: []
       }
     },
-    clean: ['dist']
+    clean: ['dist'],
+    open : {
+      dev: {
+        path: 'http://127.0.0.1:9000/',
+        app: 'Google Chrome'
+      }
+    }
 
   });
 
@@ -214,6 +221,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-open');
 
   // Register tasks
   grunt.registerTask('build', [
