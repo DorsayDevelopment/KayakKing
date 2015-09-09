@@ -78,22 +78,24 @@ app.controller('HomeController', function($scope, $location, $http, imgDir) {
 
   function send_email() {
     var req = {
-      method: 'POST',
-      url: 'https://api.sendgrid.com/api/mail.send.json',
-      headers: {
-        'Content-Type': 'Content-Type: application/json'
-      },
       data: {
-        api_user: 'brymastr',
-        to: 'dorsay@live.ca',
-        subject: 'Test subject',
-        from: 'info@parksvillekayaking.ca',
-        html: "body"
+        name: $scope.form.name,
+        email: $scope.form.email,
+        date: $scope.form.date,
+        time: $scope.form.time,
+        message: $scope.form.message
+      },
+      headers: {
+        'Content-Type': 'application/json'
       }
     };
+
     console.log('Sending request');
-    $http.post('http://localhost:9000/api/email', req, function(res) {
-      console.log('Response: ' + res);
+
+    $http.post('http://localhost:9000/api/email', req).success(function(data, status, headers, config) {
+      console.log(data);
+    }).error(function(data, status, headers, config) {
+      console.log(data);
     });
   }
 
