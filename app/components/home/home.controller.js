@@ -16,7 +16,6 @@ app.controller('HomeController', function($scope, $location, $http, imgDir) {
     $('select').material_select();
     $('select').parent().find('.caret').remove();
 
-
   });
 
   // Date picker
@@ -68,11 +67,11 @@ app.controller('HomeController', function($scope, $location, $http, imgDir) {
       $scope.form.date = picker.get();
       $scope.form.time = $('#form-time').val();
       console.log($scope.form);
-      //$('#contact-form').slideUp(function() {
-      //  $('#toggle-contact').fadeOut(function() {
-      //    $('#thankyou').fadeIn();
-      //  });
-      //});
+      $('#contact-form').slideUp(function() {
+        $('#toggle-contact').fadeOut(function() {
+          $('#thankyou').fadeIn();
+        });
+      });
       send_email();
     });
 
@@ -112,7 +111,7 @@ app.controller('HomeController', function($scope, $location, $http, imgDir) {
     }, 'slow', 'easeInOutQuart');
   });
 
-  $('#contact-nav, .caption>a').click(function() {
+  $('#contact-nav, .caption>a, .teaser>a').click(function() {
     if($('#contact-form').css('display') == 'none') {
       $('#toggle-contact').trigger('click');
     }
