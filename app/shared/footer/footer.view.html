@@ -8,8 +8,13 @@
                 <li>Accommodations</li>
             </ul>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" ng-controller="FooterController">
             <h5 class="text-uppercase">Testimonials</h5>
+            <div ng-repeat="item in testimonials">
+                <div ng-show="item_index == $index" class="testimonial">
+                    <p>{{item.text}}</p>
+                </div>
+            </div>
         </div>
         <div class="col-md-3">
             <h5>Logo</h5>

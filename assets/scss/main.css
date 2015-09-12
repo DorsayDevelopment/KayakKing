@@ -136,6 +136,10 @@ a {
     border-radius: 100%;
     border: 1px solid #e6e6e6; }
 
+.testimonial {
+  padding: 0 30px;
+  font-style: italic; }
+
 .angular-google-map-container {
   height: 500px; }
 
