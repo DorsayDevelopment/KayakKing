@@ -114,6 +114,11 @@ module.exports = function(grunt) {
           }, {
             expand: true,
             cwd: 'node_modules/',
+            src: 'request/**',
+            dest: 'dist/dependencies/'
+          }, {
+            expand: true,
+            cwd: 'node_modules/',
             src: 'body-parser/**',
             dest: 'dist/dependencies/'
           }, {
@@ -153,6 +158,11 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'node_modules/',
             src: 'express/**',
+            dest: 'dist/dependencies/'
+          }, {
+            expand: true,
+            cwd: 'node_modules/',
+            src: 'request/**',
             dest: 'dist/dependencies/'
           }, {
             expand: true,

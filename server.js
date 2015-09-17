@@ -2,7 +2,7 @@ var config = require('./config/config');
 var express = require(config.depPath + '/express/lib/express');
 var bodyParser = require(config.depPath + '/body-parser');
 var http = require('http');
-var request = require('request');
+var request = require(config.depPath + '/request');
 var app = express();
 
 app.use(express.static(__dirname + config.indexPath));
