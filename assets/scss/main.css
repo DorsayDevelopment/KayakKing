@@ -127,6 +127,8 @@ a {
 
 .contact-item {
   margin-top: 30px; }
+  .contact-item a:visited {
+    color: #e6e6e6; }
   .contact-item i {
     width: 80px;
     height: 80px;
@@ -135,6 +137,8 @@ a {
     -moz-border-radius: 100%;
     border-radius: 100%;
     border: 1px solid #e6e6e6; }
+    .contact-item i:hover {
+      background: #201f21; }
 
 .testimonial {
   padding: 0 30px;

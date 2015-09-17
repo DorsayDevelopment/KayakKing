@@ -111,7 +111,7 @@ app.controller('HomeController', function($scope, $location, $http, imgDir) {
     }, 'slow', 'easeInOutQuart');
   });
 
-  $('#contact-nav, .caption>a, .teaser>a').click(function() {
+  $('#contact-nav, .caption>a, .teaser>a, .go-to-contact').click(function() {
     if($('#contact-form').css('display') == 'none') {
       $('#toggle-contact').trigger('click');
     }
