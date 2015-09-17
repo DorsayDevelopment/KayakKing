@@ -88,8 +88,16 @@ a {
   font-style: italic;
 }
 
+.map-section a {
+  position: relative;
+  top: $map-section-height-mobile / -1.67;
+}
+
 .angular-google-map-container {
-  height: $map-section-height;
+  height: $map-section-height-mobile;
+  @include vpw-medium {
+    height: $map-section-height;
+  }
 }
 
 .small-line {

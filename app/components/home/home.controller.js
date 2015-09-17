@@ -42,6 +42,11 @@ app.controller('HomeController', function($scope, $location, $http, imgDir) {
     }
   };
 
+  $scope.mapLink = 'https://www.google.com/maps/@' +
+    $scope.map.center.latitude + ',' +
+    $scope.map.center.longitude + ',' +
+    $scope.map.zoom + 'z';
+
   $scope.contactFormHidden = true;
 
   // Contact form visibility

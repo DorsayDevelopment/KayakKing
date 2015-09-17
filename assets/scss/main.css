@@ -144,8 +144,15 @@ a {
   padding: 0 30px;
   font-style: italic; }
 
+.map-section a {
+  position: relative;
+  top: -119.76048px; }
+
 .angular-google-map-container {
-  height: 500px; }
+  height: 200px; }
+  @media only screen and (min-width: 50em) {
+    .angular-google-map-container {
+      height: 500px; } }
 
 .small-line {
   border-bottom: 1px #e6e6e6 solid;

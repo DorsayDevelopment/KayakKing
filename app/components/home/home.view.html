@@ -65,8 +65,15 @@
     </div>
 </div>
 
-<div class="row map-section" id="location">
-    <ui-gmap-google-map center='map.center' zoom='map.zoom' options="map.options"></ui-gmap-google-map>
+<div class="row map-section center" id="location">
+    <ui-gmap-google-map
+            center='map.center'
+            zoom='map.zoom'
+            options="map.options"
+    ></ui-gmap-google-map>
+
+    <a target="_blank" ng-href="{{mapLink}}"
+       class="waves-effect waves-light btn-large red lighten-1 visible-xs">View on map</a>
 </div>
 
 <div class="row info-section" id="info">
