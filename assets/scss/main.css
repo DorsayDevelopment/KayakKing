@@ -72,6 +72,12 @@ nav.navbar-shrink .navbar-toggle {
   padding: 4px 5px;
   margin: 8px 15px 8px 0; }
 
+.navbar-collapse.collapse.in {
+  background: #201f21; }
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border: none; }
+
 .footer {
   position: absolute;
   bottom: 0;

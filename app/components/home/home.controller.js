@@ -131,4 +131,10 @@ app.controller('HomeController', function($scope, $location, $http, imgDir) {
     }, 'slow', 'easeInOutQuart');
   });
 
+  $('.nav a').on('click', function(){
+    console.log('click');
+    console.log('asdfasf');
+    $('.navbar-toggle').click(); //bootstrap 3.x by Richard
+  });
+
 });
