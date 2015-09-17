@@ -1,6 +1,6 @@
 var config = require('./config/config');
 var express = require(config.depPath + '/express/lib/express');
-var bodyParser = require('body-parser');
+var bodyParser = require(config.depPath + '/body-parser');
 var http = require('http');
 var request = require('request');
 var app = express();
