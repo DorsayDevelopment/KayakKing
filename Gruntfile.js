@@ -155,6 +155,11 @@ module.exports = function(grunt) {
             src: 'express/**',
             dest: 'dist/dependencies/'
           }, {
+            expand: true,
+            cwd: 'node_modules/',
+            src: 'body-parser/**',
+            dest: 'dist/dependencies/'
+          }, {
             src: 'config/config.staging.js',
             dest: 'dist/config/config.js'
           }
