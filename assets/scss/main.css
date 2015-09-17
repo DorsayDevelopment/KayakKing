@@ -108,6 +108,12 @@ a {
     color: inherit;
     text-decoration: none; }
 
+p {
+  font-size: 15pt; }
+
+footer p {
+  font-size: 12pt; }
+
 .section {
   height: 200px; }
 

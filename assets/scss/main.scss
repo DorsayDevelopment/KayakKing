@@ -32,6 +32,14 @@ a {
   }
 }
 
+p {
+  font-size: $main-font-size;
+}
+
+footer p {
+  font-size: 12pt;
+}
+
 .section {
   height: $section-height;
 }
