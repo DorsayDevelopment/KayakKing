@@ -3,7 +3,7 @@
  */
 app.controller('HomeController', function($scope, $location, $http, imgDir) {
 
-  $scope.imgDir = imgDir;
+  $scope.imgDir = "assets/img";
 
   // Initialize things
   $(document).ready(function(){
