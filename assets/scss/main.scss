@@ -32,6 +32,14 @@ a {
   }
 }
 
+p {
+  font-size: $main-font-size;
+}
+
+footer p {
+  font-size: 12pt;
+}
+
 .section {
   height: $section-height;
 }
@@ -65,6 +73,10 @@ a {
 .contact-item {
   margin-top: 30px;
 
+  a:visited {
+    color: $text-color;
+  }
+
   i {
     width: 80px;
     height: 80px;
@@ -73,11 +85,27 @@ a {
     -moz-border-radius: 100%;
     border-radius: 100%;
     border: 1px solid $text-color;
+    &:hover {
+      background: $header-color;
+    }
   }
 }
 
+.testimonial {
+  padding: 0 30px;
+  font-style: italic;
+}
+
+.map-section a {
+  position: relative;
+  top: $map-section-height-mobile / -1.67;
+}
+
 .angular-google-map-container {
-  height: $map-section-height;
+  height: $map-section-height-mobile;
+  @include vpw-medium {
+    height: $map-section-height;
+  }
 }
 
 .small-line {
@@ -89,3 +117,9 @@ a {
 .initially-hidden {
   display: none;
 }
+
+// Materialize select fixer for using prefixed icons
+.input-field .prefix ~ input, .input-field .prefix ~ textarea , .input-field .prefix ~ div.select-wrapper {
+  margin-left: 3rem;
+  width: 92%;
+  width: calc(100% - 3rem); }

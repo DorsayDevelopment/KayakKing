@@ -2,31 +2,7 @@
     <div class="slider">
         <ul class="slides">
             <li>
-                <img ng-src="{{imgDir}}/carousel/kayaksun1.jpg">
-                <div class="caption right-align">
-                    <h3>Guided kayak tours</h3>
-                    <h5 class="light grey-text text-lighten-3">Explore the beautiful east coast of<br> Vancouver Island from the water</h5>
-                    <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
-                </div>
-            </li>
-            <li>
-                <img ng-src="{{imgDir}}/carousel/kayaksun2.jpg">
-                <div class="caption left-align">
-                    <h3>undecided text</h3>
-                    <h5 class="light grey-text text-lighten-3">Find something to say here</h5>
-                    <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
-                </div>
-            </li>
-            <li>
-                <img ng-src="{{imgDir}}/carousel/arrowsmith.jpg">
-                <div class="caption right-align">
-                    <h3>Another heading thing</h3>
-                    <h5 class="light grey-text text-lighten-3">Also here</h5>
-                    <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
-                </div>
-            </li>
-            <li>
-                <img ng-src="{{imgDir}}/carousel/brickyard.jpg">
+                <img src="/assets/img/carousel/brickyard.jpg">
                 <div class="caption right-align">
                     <h3>Good place to put text</h3>
                     <h5 class="light grey-text text-lighten-3">This needs something too</h5>
@@ -34,7 +10,23 @@
                 </div>
             </li>
             <li>
-                <img ng-src="{{imgDir}}/carousel/sunset1.jpg">
+                <img src="/assets/img/carousel/water1.jpg">
+                <div class="caption center-align">
+                    <h3>Meet the wildlife</h3>
+                    <h5 class="light grey-text text-lighten-3">Rendezvous with sea lions<br> and maybe even a whale</h5>
+                    <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
+                </div>
+            </li>
+            <li>
+                <img src="/assets/img/carousel/kayaksun2.jpg">
+                <div class="caption left-align">
+                    <h3>undecided text</h3>
+                    <h5 class="light grey-text text-lighten-3">Find something to say here</h5>
+                    <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
+                </div>
+            </li>
+            <li>
+                <img src="/assets/img/carousel/sunset1.jpg">
                 <div class="caption bottom-align">
                     <h3>Catch a sunset</h3>
                     <h5 class="light grey-text text-lighten-3">Watch the sun go down over the horizon<br> from one of our safe and sturdy kayaks</h5>
@@ -42,10 +34,10 @@
                 </div>
             </li>
             <li>
-                <img ng-src="{{imgDir}}/carousel/water1.jpg">
-                <div class="caption center-align">
-                    <h3>Meet the wildlife</h3>
-                    <h5 class="light grey-text text-lighten-3">Rendezvous with sea lions<br> and maybe even a whale</h5>
+                <img src="/assets/img/carousel/kayaksun1.jpg" >
+                <div class="caption right-align">
+                    <h3>Guided kayak tours</h3>
+                    <h5 class="light grey-text text-lighten-3">Explore the beautiful east coast of<br> Vancouver Island from the water</h5>
                     <a class="waves-effect waves-light btn-large red lighten-1">Book Now</a>
                 </div>
             </li>
@@ -73,28 +65,40 @@
     </div>
 </div>
 
-<div class="row map-section" id="location">
-    <ui-gmap-google-map center='map.center' zoom='map.zoom' options="map.options"></ui-gmap-google-map>
+<div class="row map-section center" id="location">
+    <ui-gmap-google-map
+            center='map.center'
+            zoom='map.zoom'
+            options="map.options"
+    ></ui-gmap-google-map>
+
+    <a target="_blank" ng-href="{{mapLink}}"
+       class="waves-effect waves-light btn-large red lighten-1 visible-xs">View on map</a>
 </div>
 
 <div class="row info-section" id="info">
     <div class="container center">
         <div class="col-md-6">
-            <h4>Individuals or groups up to 4 people</h4>
-            <h3>$30</h3>
+            <h4>Groups up to 4 people</h4>
+            <h3>$30 per person</h3>
         </div>
         <div class="col-md-6">
             <h4>Groups of 5 to 7 people</h4>
-            <h3>$35</h3>
+            <h3>$35 per person</h3>
         </div>
 
         <div class="col-md-12">
             <a class="waves-light waves-effect btn-large red lighten-1" id="toggle-contact">Book Now</a>
+            <div id="thankyou" class="initially-hidden">
+                <h4>Thank you for contacting us!</h4>
+                <p>We will get back to you within 24 hours</p>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="row contact-form-section initially-hidden" id="contact-form">
+    <form name="contactForm">
     <div class="container">
         <div class="col-md-12 center">
             <h4 class="text-uppercase">Contact Form</h4>
@@ -102,40 +106,42 @@
         </div>
         <div class="input-field col-md-4">
             <i class="material-icons prefix">person_pin</i>
-            <input type="text" id="form-name"/>
+            <input type="text" id="form-name" ng-model="form.name"/>
             <label for="form-name">Contact name</label>
         </div>
         <div class="input-field col-md-4">
             <i class="material-icons prefix">email</i>
-            <input type="email" id="form-email" class="validate"/>
-            <label for="form-phone">Email Address</label>
+            <input type="email" id="form-email" class="validate" ng-model="form.email"/>
+            <label for="form-email">Email Address</label>
         </div>
         <div class="input-field col-md-4">
             <i class="material-icons prefix">phone</i>
-            <input type="email" id="form-phone" class="validate"/>
+            <input type="tel" id="form-phone" class="validate" ng-model="form.phone"/>
             <label for="form-phone">Phone</label>
         </div>
         <div class="input-field col-md-3 col-md-offset-3">
-            <i class="material-icons prefix">schedule</i>
-            <input type="date" class="datepicker" id="form-date">
+            <i class="material-icons prefix">today</i>
+            <input type="text" class="datepicker" id="form-date">
             <label for="form-date">Date (if interested)</label>
         </div>
-        <div class="input-field col-md-2">
-            <select>
-                <option value="" disabled selected>Choose a time</option>
-                <option value="morning">Morning (7-10)</option>
-                <option value="afternoon">Afternoon (1-4)</option>
-                <option value="evening">Evening (5-9))</option>
+        <div class="input-field col-md-3">
+            <i class="material-icons prefix">schedule</i>
+            <select id="form-time" title="">
+                <option disabled selected>Choose a time</option>
+                <option value="morning">Morning (7:00am-10:00am)</option>
+                <option value="afternoon">Afternoon (1:00pm-4:00pm)</option>
+                <option value="evening">Evening (5:00pm-9:00pm))</option>
             </select>
             <label>Time of day</label>
         </div>
         <div class="input-field col-md-12">
             <i class="material-icons prefix">message</i>
-            <textarea cols="30" rows="10" id="form-message" class="materialize-textarea"></textarea>
+            <textarea cols="30" rows="10" id="form-message" class="materialize-textarea" ng-model="form.message"></textarea>
             <label for="form-message">Message (optional)</label>
         </div>
     </div>
-    <a class="waves-effect waves-light btn-large red lighten-1 col-md-2 col-xs-offset-5">Submit</a>
+    <button class="waves-effect waves-light btn-large red lighten-1 col-md-2 col-xs-offset-5" id="form-submit" ng-disabled="contactForm.$invalid">Submit</button>
+    </form>
 </div>
 
 <div class="row contact-section" id="contact">
@@ -157,7 +163,7 @@
             </a>
         </div>
         <div class="col-sm-4 contact-item">
-            <a href="#">
+            <a href="" class="go-to-contact">
                 <i class="fa fa-envelope-square fa-4x"></i>
                 <p>Email</p>
             </a>

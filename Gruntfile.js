@@ -96,7 +96,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'assets/img/',
             src: '**',
-            dest: 'dist/img/',
+            dest: 'dist/assets/img/',
             flatten: false
           }, {
             expand: true,
@@ -134,7 +134,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'assets/img/',
             src: '**',
-            dest: 'dist/img/',
+            dest: 'dist/assets/img/',
             flatten: false
           }, {
             expand: true,
@@ -202,7 +202,6 @@ module.exports = function(grunt) {
       }
     },
     clean: ['dist']
-
   });
 
   // These plugins provide necessary tasks.

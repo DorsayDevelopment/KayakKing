@@ -26,6 +26,12 @@ nav.navbar {
   nav.navbar .navbar-header {
     height: 70px; }
 
+.navbar-toggle.collapsed {
+  margin-top: 15px; }
+
+nav.navbar-shrink .navbar-toggle {
+  margin-top: 10px !important; }
+
 nav .navbar-toggle {
   margin: 13px 15px 13px 0; }
 
@@ -40,6 +46,9 @@ nav .navbar-toggle {
 nav.navbar.navbar-shrink {
   height: 20px;
   background: #201f21; }
+
+.navbar-shrink {
+  height: 50px !important; }
 
 nav.navbar-shrink a {
   font-size: 15pt; }
@@ -62,6 +71,12 @@ nav.navbar-shrink .navbar-brand {
 nav.navbar-shrink .navbar-toggle {
   padding: 4px 5px;
   margin: 8px 15px 8px 0; }
+
+.navbar-collapse.collapse.in {
+  background: #201f21; }
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border: none; }
 
 .footer {
   position: absolute;
@@ -93,6 +108,12 @@ a {
     color: inherit;
     text-decoration: none; }
 
+p {
+  font-size: 15pt; }
+
+footer p {
+  font-size: 12pt; }
+
 .section {
   height: 200px; }
 
@@ -118,6 +139,8 @@ a {
 
 .contact-item {
   margin-top: 30px; }
+  .contact-item a:visited {
+    color: #e6e6e6; }
   .contact-item i {
     width: 80px;
     height: 80px;
@@ -126,9 +149,22 @@ a {
     -moz-border-radius: 100%;
     border-radius: 100%;
     border: 1px solid #e6e6e6; }
+    .contact-item i:hover {
+      background: #201f21; }
+
+.testimonial {
+  padding: 0 30px;
+  font-style: italic; }
+
+.map-section a {
+  position: relative;
+  top: -119.76048px; }
 
 .angular-google-map-container {
-  height: 500px; }
+  height: 200px; }
+  @media only screen and (min-width: 50em) {
+    .angular-google-map-container {
+      height: 500px; } }
 
 .small-line {
   border-bottom: 1px #e6e6e6 solid;
@@ -137,5 +173,10 @@ a {
 
 .initially-hidden {
   display: none; }
+
+.input-field .prefix ~ input, .input-field .prefix ~ textarea, .input-field .prefix ~ div.select-wrapper {
+  margin-left: 3rem;
+  width: 92%;
+  width: calc(100% - 3rem); }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,29 +1,31 @@
 /**
  * Created by brycen on 15-03-05.
  */
-app.controller('HomeController', function($scope, $location, imgDir) {
+app.controller('HomeController', function($scope, $location, $http, imgDir) {
 
-  $scope.imgDir = imgDir;
+  $scope.imgDir = "assets/img";
 
-  // Slider
+  // Initialize things
   $(document).ready(function(){
     $('.slider').slider({
       full_width: true,
       height: '60vh',
       indicators: false
     });
+
+    $('select').material_select();
+    $('select').parent().find('.caret').remove();
+
   });
 
   // Date picker
-  $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
+  var CurrentDate = new Date();
+  var $input = $('.datepicker').pickadate({
+    selectMonths: true,
+    selectYears: 1,
+    min: CurrentDate
   });
-
-  // Select
-  $(document).ready(function() {
-    $('select').material_select();
-  });
+  var picker = $input.pickadate('picker');
 
   // Links
   $scope.facebook = "http://facebook.com";
@@ -39,6 +41,11 @@ app.controller('HomeController', function($scope, $location, imgDir) {
       scrollwheel: false
     }
   };
+
+  $scope.mapLink = 'https://www.google.com/maps/@' +
+    $scope.map.center.latitude + ',' +
+    $scope.map.center.longitude + ',' +
+    $scope.map.zoom + 'z';
 
   $scope.contactFormHidden = true;
 
@@ -57,6 +64,45 @@ app.controller('HomeController', function($scope, $location, imgDir) {
     }
   });
 
+
+  $scope.form = {};
+  //$scope.form.time =
+  $('#form-submit')
+    .click(function() {
+      $scope.form.date = picker.get();
+      $scope.form.time = $('#form-time').val();
+      console.log($scope.form);
+      $('#contact-form').slideUp(function() {
+        $('#toggle-contact').fadeOut(function() {
+          $('#thankyou').fadeIn();
+        });
+      });
+      send_email();
+    });
+
+  function send_email() {
+    var req = {
+      data: {
+        name: $scope.form.name,
+        email: $scope.form.email,
+        date: $scope.form.date,
+        time: $scope.form.time,
+        message: $scope.form.message
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    console.log('Sending request');
+
+    $http.post('http://localhost:9000/api/email', req).success(function(data, status, headers, config) {
+      console.log(data);
+    }).error(function(data, status, headers, config) {
+      console.log(data);
+    });
+  }
+
   // Nav
   $('#home-nav').click(function() {
     $('html, body').animate({
@@ -70,9 +116,25 @@ app.controller('HomeController', function($scope, $location, imgDir) {
     }, 'slow', 'easeInOutQuart');
   });
 
-  $('#contact-nav, .caption>a').click(function() {
+  $('#contact-nav, .caption>a, .teaser>a, .go-to-contact').click(function() {
+    if($('#contact-form').css('display') == 'none') {
+      $('#toggle-contact').trigger('click');
+    }
     $('html, body').animate({
-      scrollTop: $('#contact').offset().top - 50
+      scrollTop: $('#contact-form').offset().top - 50
     }, 'slow', 'easeInOutQuart');
   });
+
+  $('#info-nav').click(function() {
+    $('html, body').animate({
+      scrollTop: $('#info').offset().top
+    }, 'slow', 'easeInOutQuart');
+  });
+
+  $('.nav a').on('click', function(){
+    console.log('click');
+    console.log('asdfasf');
+    $('.navbar-toggle').click(); //bootstrap 3.x by Richard
+  });
+
 });
